@@ -5,7 +5,7 @@ const Nav = () => {
     return (
         <nav className="header">
         <div className="header__logo">
-        <NavLink to="/" ><img className="header__logo--img" src="./src/assets/Logo/BrainFlix-logo.svg" alt="Brainflix logo" /></NavLink> 
+        <NavLink to="/" ><img className="header__logo--img" src="../src/assets/Logo/BrainFlix-logo.svg" alt="Brainflix logo" /></NavLink> 
         </div>
         <div className="header__profile">
         <form className="header__profile--search">
