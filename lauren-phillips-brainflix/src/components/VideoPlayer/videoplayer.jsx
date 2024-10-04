@@ -1,10 +1,11 @@
 import { useParams } from "react-router-dom";
 import videoData from '../../Data/video-details.json';
-import './VideoPlayer.css';
+import './videoplayer.css';
 
 function VideoPlayer() {
     const { id } = useParams();
     const selectedVideo = videoData.find(video => video.id === id) || videoData[0]; // Default to the first video if no ID matches
+    const numberOfComments = selectedVideo.comments.length;
 
     return (
         <section className="video-player">
@@ -30,9 +31,10 @@ function VideoPlayer() {
                     </p>
                 </div>
                 </div>
-                <div className="video-player__desscription">
+                <div className="video-player__description">
                     <p>{selectedVideo.description}</p>
                 </div>
+                <p className="video-player__comment-count">{numberOfComments} {numberOfComments === 1 ? 'comment' : 'comments'} </p>
             </div>
         </section>
     );

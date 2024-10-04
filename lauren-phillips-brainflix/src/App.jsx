@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import Nav from './components/Navigation/navigations.jsx';
-import HeroVid from './components/HeroVid/herovid.jsx';
+import NextVideos from './components/NextVid/NextVid.jsx';
 import VideoPlayer from './components/VideoPlayer/videoplayer.jsx';
+import CommentSection from './components/CommentSection/commentsection.jsx';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 
@@ -19,7 +20,8 @@ function App() {
             <Route path="/video/:id" element={<VideoPlayer />} />
             {/* Add other routes as needed */}
           </Routes>
-          <HeroVid />
+          <CommentSection />
+          <NextVideos />
         </main>
       </BrowserRouter>
     </>
