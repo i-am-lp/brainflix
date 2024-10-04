@@ -1,8 +1,8 @@
-import { useState } from 'react'
 import Nav from './components/Navigation/navigations.jsx';
 import NextVideos from './components/NextVid/NextVid.jsx';
 import VideoPlayer from './components/VideoPlayer/videoplayer.jsx';
 import CommentSection from './components/CommentSection/commentsection.jsx';
+import FilledComments from './components/FilledComments/filledcomments.jsx';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 
@@ -16,12 +16,23 @@ function App() {
 
         <main>
           <Routes>
-            <Route path="/" element={<VideoPlayer />} />
-            <Route path="/video/:id" element={<VideoPlayer />} />
-            {/* Add other routes as needed */}
+            <Route path="/" element={
+              <>
+                <VideoPlayer />
+                <CommentSection />
+                <FilledComments />
+                <NextVideos />
+              </>
+            } />
+            <Route path="/video/:id" element={
+              <>
+                <VideoPlayer />
+                <CommentSection />
+                <FilledComments />
+                <NextVideos />
+              </>
+            } />
           </Routes>
-          <CommentSection />
-          <NextVideos />
         </main>
       </BrowserRouter>
     </>

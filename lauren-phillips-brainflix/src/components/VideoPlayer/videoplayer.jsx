@@ -4,21 +4,21 @@ import './videoplayer.css';
 
 function VideoPlayer() {
     const { id } = useParams();
-    const selectedVideo = videoData.find(video => video.id === id) || videoData[0]; // Default to the first video if no ID matches
+    const selectedVideo = videoData.find(video => video.id === id) || videoData[0]; 
     const numberOfComments = selectedVideo.comments.length;
 
     return (
-        <section className="video-player">
-            <div className="video-player__container">
+        <section className="main__video-player">
+            <div className="main__video-player__container">
                 <video
-                    className="video-player__element"
+                    className="main__video-player__element"
                     controls
                     poster={selectedVideo.image}
                     src={selectedVideo.video}
                 ></video>
-                <div className="video-player__details">
+                <div className="main__video-player__details">
                     <h1>{selectedVideo.title}</h1>
-                    <div className="video-player__details--grouped">
+                    <div className="main__video-player__details--grouped">
                     <p>By {selectedVideo.channel}</p>
                     <p>{selectedVideo.timestamp}</p>
                     <p> 
@@ -31,10 +31,10 @@ function VideoPlayer() {
                     </p>
                 </div>
                 </div>
-                <div className="video-player__description">
+                <div className="main__video-player__description">
                     <p>{selectedVideo.description}</p>
                 </div>
-                <p className="video-player__comment-count">{numberOfComments} {numberOfComments === 1 ? 'comment' : 'comments'} </p>
+                <p className="main__video-player__comment-count">{numberOfComments} {numberOfComments === 1 ? 'comment' : 'comments'} </p>
             </div>
         </section>
     );
