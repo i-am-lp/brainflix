@@ -9,10 +9,11 @@ function NextVideos() {
     
     return (
         <section className="next-video">
+            <p className='next-video__title'>NEXT VIDEOS</p>
             {videoData
                 .filter(video => video.id !== selectedVideo.id)
                 .map((video) => (
-                <Link to={`/video/${video.id}`} key={video.id}>
+                <Link to={`/video/${video.id}`} key={video.id}  className="next-video__link">
                     <article className="next-video__main">
                         <img src={video.image} alt={video.title} className="next-video__image" />
                         <div className='next-video__details'>

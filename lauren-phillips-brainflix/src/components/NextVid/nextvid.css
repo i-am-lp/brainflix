@@ -16,6 +16,35 @@
   font-weight: 700;
   font-style: normal;
 }
+.next-video {
+  text-decoration: none;
+}
+.next-video__title {
+  color: #afafaf;
+  font-size: 0.9rem;
+  font-family: "Avenir Next Demi", Arial, sans-serif;
+}
+.next-video__main {
+  display: flex;
+  margin-bottom: 16px;
+}
 .next-video__image {
-  max-width: 100%;
-}/*# sourceMappingURL=nextvid.css.map */
+  width: 45%;
+  border-radius: 4px;
+  height: 90px;
+}
+.next-video__link {
+  text-decoration: none;
+}
+.next-video__details {
+  margin-left: 8px;
+}
+.next-video__details--title {
+  color: #323232;
+  font-size: 0.8rem;
+  font-family: "Avenir Next Demi", Arial, sans-serif;
+}
+.next-video__details--by {
+  color: #323232;
+  font-size: 0.8rem;
+}/*# sourceMappingURL=NextVid.css.map */
