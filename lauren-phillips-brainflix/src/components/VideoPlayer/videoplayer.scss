@@ -31,12 +31,42 @@
     }
   
     &__element {
-      max-width: 100%;
-      margin-bottom: 1rem;
+      max-width: 110%;
     }
   
     &__details {
       width: 100%;
-      padding: 1rem;
+      padding: 16px;
+
+      &--title {
+        font-family: 'Avenir Next Demi', Arial, sans-serif;
+        font-size: 1.6rem;
+      }
+
+      &--grouped {
+        border-top: 1px solid $mercury;
+        border-bottom: 1px solid $mercury;
+        display: flex;
+        justify-content: flex-start;
+        color: $silver;
+
+        &--a {
+            margin-right: 8px;
+        }
+
+        &--channel {
+            font-family: 'Avenir Next Demi', Arial, sans-serif;
+            color: $brainflix-black;
+        }
+      }
+    }
+
+    &__description {
+        font-size: .85rem;
+    }
+
+    &__comment-count {
+        width: 100%;
+        font-family: 'Avenir Next Demi', Arial, sans-serif;
     }
   }

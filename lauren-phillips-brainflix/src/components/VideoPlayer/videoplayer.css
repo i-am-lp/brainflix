@@ -22,10 +22,34 @@
   align-items: center;
 }
 .video-player__element {
-  max-width: 100%;
-  margin-bottom: 1rem;
+  max-width: 110%;
 }
 .video-player__details {
   width: 100%;
-  padding: 1rem;
+  padding: 16px;
+}
+.video-player__details--title {
+  font-family: "Avenir Next Demi", Arial, sans-serif;
+  font-size: 1.6rem;
+}
+.video-player__details--grouped {
+  border-top: 1px solid #E1E1E1;
+  border-bottom: 1px solid #E1E1E1;
+  display: flex;
+  justify-content: flex-start;
+  color: #afafaf;
+}
+.video-player__details--grouped--a {
+  margin-right: 8px;
+}
+.video-player__details--grouped--channel {
+  font-family: "Avenir Next Demi", Arial, sans-serif;
+  color: #323232;
+}
+.video-player__description {
+  font-size: 0.85rem;
+}
+.video-player__comment-count {
+  width: 100%;
+  font-family: "Avenir Next Demi", Arial, sans-serif;
 }/*# sourceMappingURL=videoplayer.css.map */
