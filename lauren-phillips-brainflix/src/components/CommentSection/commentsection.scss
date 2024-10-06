@@ -1,0 +1,59 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+
+@font-face {
+    font-family: 'Avenir Next Regular';
+    src: url(../../assets/Font/AvenirNextLTPro-Regular.otf) format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir Next Demi';
+    src: url(../../assets/Font/AvenirNextLTPro-Demi.otf) format('opentype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir Next Bold';
+    src: url(../../assets/Font/AvenirNextLTPro-Bold.otf) format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+.comments {
+    display: flex;
+
+    &__image {
+        background-image: url(../../assets/Images/Mohan-muruge.jpg);
+        background-size: cover;
+        border-radius: 50%;
+        height: 36px;
+        width: 36px;
+        margin: 16px 16px 0 0;
+    }
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+
+        &--header {
+            color: $silver;
+            font-family: 'Avenir Next Demi', Arial, sans-serif;
+            font-size: .85rem;
+        }
+
+        &--form {
+
+            &--comment {
+                background-color: $alabaster;
+                border-radius: 4px;
+                border: 1px solid rgb(175, 175, 175, .5); 
+                color: $brainflix-black;
+                width: 240px;
+            }
+        }
+    }
+}
