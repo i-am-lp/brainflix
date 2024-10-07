@@ -25,4 +25,21 @@ body {
   body {
     padding: 36px;
   }
+}
+
+@media screen and (min-width: 1280px) {
+  .desktop-container {
+    display: flex;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .desktop-container__left {
+    width: 60vw;
+    border-right: 1px solid rgba(175, 175, 175, 0.5);
+  }
+}
+@media screen and (min-width: 1280px) {
+  .desktop-container__right {
+    margin-left: 36px;
+  }
 }/*# sourceMappingURL=App.css.map */

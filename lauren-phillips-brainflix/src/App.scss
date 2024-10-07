@@ -31,3 +31,24 @@ body {
         padding: 36px;
     }
 }
+
+.desktop-container {
+
+    @include desktop {
+        display: flex;
+    }
+
+    &__left {
+
+        @include desktop{
+        width: 60vw;
+        border-right: 1px solid rgb(175, 175, 175, .5); 
+        }
+    }
+
+    &__right {
+        @include desktop {
+        margin-left: 36px;
+        }
+    }
+}

@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
 import { format } from 'date-fns';
 import videoData from '../../Data/video-details.json';
-import './videoplayer.css';
+import '../VideoPlayer/videoplayer.css';
 
-function VideoPlayer() {
+function VideoDetails() {
     const { id } = useParams();
     const selectedVideo = videoData.find(video => video.id === id) || videoData[0]; 
     const numberOfComments = selectedVideo.comments.length;
@@ -11,17 +11,9 @@ function VideoPlayer() {
     const formattedDate = format(date, 'MM/dd/yyyy');
 
     return (
-        <section className="video-player">
-            <div className="video-player__container">
-                <video
-                    className="video-player__element"
-                    controls
-                    poster={selectedVideo.image}
-                    src={selectedVideo.video}
-                ></video>
-
+        <section>
                 {/* taking this out */}
-                {/* <div className="video-player__details">
+                <div className="video-player__details">
                     <h1 className="video-player__details--title">{selectedVideo.title}</h1>
                     <div className="video-player__details--grouped">
                         <div className="video-player__details--grouped--a">
@@ -43,11 +35,10 @@ function VideoPlayer() {
                 <div className="video-player__description">
                     <p>{selectedVideo.description}</p>
                 </div>
-                <p className="video-player__comment-count">{numberOfComments} {numberOfComments === 1 ? 'comment' : 'comments'} </p> */}
+                <p className="video-player__comment-count">{numberOfComments} {numberOfComments === 1 ? 'comment' : 'comments'} </p>
             {/* taking this out */}
-            </div>
-        </section>
+            </section>
     );
 }
 
-export default VideoPlayer;
+export default VideoDetails;

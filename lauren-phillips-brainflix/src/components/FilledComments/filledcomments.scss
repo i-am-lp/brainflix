@@ -27,7 +27,7 @@
 
     &__comment {
         display: flex;
-        border-bottom: 1px solid rgb(175, 175, 175, .5); 
+        border-top: 1px solid rgb(175, 175, 175, .5); 
     }
 
     &__placeholder-image {
@@ -54,6 +54,16 @@
 
     &__date {
         color: $silver;
+
+        @include desktop {
+            padding-right: 36px;
+        }
+    }
+
+    &__text {
+        @include desktop {
+            padding-right: 36px;
+        }
     }
 
 }

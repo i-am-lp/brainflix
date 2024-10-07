@@ -25,7 +25,6 @@
 
 .comments {
     display: flex;
-    border-bottom: 1px solid $mercury;
 
     &__image {
         background-image: url(../../assets/Images/Mohan-muruge.jpg);
@@ -39,6 +38,10 @@
     &__box {
         display: flex;
         flex-direction: column;
+
+        @include desktop {
+            width: 50%;
+        }
 
         &--header {
             color: $silver;
@@ -67,6 +70,10 @@
                     width: 80%;
                     margin-right: 36px;
                     margin-bottom: 36px;
+                }
+
+                @include desktop {
+                    width: 45%;
                 }
             }
 

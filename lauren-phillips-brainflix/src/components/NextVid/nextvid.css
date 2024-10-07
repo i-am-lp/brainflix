@@ -25,6 +25,11 @@
     margin-bottom: 36px;
   }
 }
+@media screen and (min-width: 1280px) {
+  .next-video {
+    width: 100%;
+  }
+}
 .next-video__title {
   color: #afafaf;
   font-size: 0.9rem;
@@ -42,7 +47,12 @@
 .next-video__image {
   width: 45%;
   border-radius: 4px;
-  height: 90px;
+  height: auto;
+}
+@media screen and (min-width: 1280px) {
+  .next-video__image {
+    width: 25%;
+  }
 }
 .next-video__link {
   text-decoration: none;

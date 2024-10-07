@@ -31,6 +31,10 @@
         margin-bottom: 36px;
     }
 
+    @include desktop {
+        width: 100%;
+    }
+
     &__title {
         color: $silver;
         font-size: .9rem;
@@ -49,7 +53,11 @@
     &__image {
         width: 45%;
         border-radius: 4px;
-        height: 90px;
+        height: auto;
+
+        @include desktop {
+            width: 25%;
+        }
     }
 
     &__link {
