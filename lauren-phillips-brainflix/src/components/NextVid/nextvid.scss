@@ -26,10 +26,19 @@
 .next-video {
     text-decoration: none;
 
+    @include tablet {
+        width: 40vw;
+        margin-bottom: 36px;
+    }
+
     &__title {
         color: $silver;
         font-size: .9rem;
         font-family: 'Avenir Next Demi', Arial, sans-serif;
+
+        @include tablet {
+            margin-top: 36px;
+        }
     }
 
     &__main {

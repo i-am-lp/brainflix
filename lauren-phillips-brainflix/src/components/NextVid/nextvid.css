@@ -19,10 +19,21 @@
 .next-video {
   text-decoration: none;
 }
+@media screen and (min-width: 768px) {
+  .next-video {
+    width: 40vw;
+    margin-bottom: 36px;
+  }
+}
 .next-video__title {
   color: #afafaf;
   font-size: 0.9rem;
   font-family: "Avenir Next Demi", Arial, sans-serif;
+}
+@media screen and (min-width: 768px) {
+  .next-video__title {
+    margin-top: 36px;
+  }
 }
 .next-video__main {
   display: flex;
