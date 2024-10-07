@@ -12,7 +12,6 @@ function VideoDetails() {
 
     return (
         <section>
-                {/* taking this out */}
                 <div className="video-player__details">
                     <h1 className="video-player__details--title">{selectedVideo.title}</h1>
                     <div className="video-player__details--grouped">
@@ -36,7 +35,6 @@ function VideoDetails() {
                     <p>{selectedVideo.description}</p>
                 </div>
                 <p className="video-player__comment-count">{numberOfComments} {numberOfComments === 1 ? 'comment' : 'comments'} </p>
-            {/* taking this out */}
             </section>
     );
 }
