@@ -26,4 +26,8 @@ body {
     margin: 0;
     padding: 16px;
     font-family: 'Avenir Next', Arial, sans-serif;
+
+    @include tablet {
+        padding: 36px;
+    }
 }

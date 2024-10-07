@@ -32,22 +32,67 @@
   font-family: "Avenir Next Demi", Arial, sans-serif;
   font-size: 1.6rem;
 }
+@media screen and (min-width: 768px) {
+  .video-player__details--title {
+    font-size: 2.2rem;
+  }
+}
 .video-player__details--grouped {
   border-top: 1px solid #E1E1E1;
   border-bottom: 1px solid #E1E1E1;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   color: #afafaf;
+  font-size: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .video-player__details--grouped {
+    flex-direction: row;
+    align-items: center;
+    border-top: none;
+  }
 }
 .video-player__details--grouped--a {
-  margin-right: 8px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 16px;
 }
-.video-player__details--grouped--channel {
+@media screen and (min-width: 768px) {
+  .video-player__details--grouped--a {
+    flex-direction: row;
+    align-items: center;
+    margin-right: 32px;
+  }
+}
+.video-player__details--grouped--b {
+  display: flex;
+  flex-direction: column;
+  margin-right: 16px;
+}
+@media screen and (min-width: 768px) {
+  .video-player__details--grouped--b {
+    flex-direction: row;
+    align-items: center;
+    margin-right: 32px;
+  }
+}
+.video-player__details--channel {
   font-family: "Avenir Next Demi", Arial, sans-serif;
   color: #323232;
+  margin-right: 16px;
+}
+@media screen and (min-width: 768px) {
+  .video-player__details--views {
+    margin-right: 24px;
+  }
 }
 .video-player__description {
   font-size: 0.85rem;
+}
+@media screen and (min-width: 768px) {
+  .video-player__description {
+    font-size: 1rem;
+  }
 }
 .video-player__comment-count {
   width: 100%;

@@ -30,6 +30,11 @@
     align-items: center;
     padding: 16px;
 
+    @include tablet {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
     &__logo {
         max-width: 120px;
         max-height: 25px;
@@ -78,6 +83,10 @@
         height: 40px;
         margin: 16px 0;
         border-radius: 4px;
+
+        @include tablet {
+            width: 150px;
+        }
     }
 
 }

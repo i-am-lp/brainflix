@@ -41,28 +41,71 @@
       &--title {
         font-family: 'Avenir Next Demi', Arial, sans-serif;
         font-size: 1.6rem;
+
+        @include tablet {
+          font-size: 2.2rem;
+        }
       }
 
       &--grouped {
         border-top: 1px solid $mercury;
         border-bottom: 1px solid $mercury;
         display: flex;
-        justify-content: flex-start;
+        justify-content: space-between;
         color: $silver;
+        font-size: 1rem;
+
+        @include tablet {
+          flex-direction: row;
+          align-items: center;
+          border-top: none;
+        }
 
         &--a {
-            margin-right: 8px;
+          display: flex;
+          flex-direction: column; 
+          margin-right: 16px;
+
+            @include tablet {
+              flex-direction: row; 
+              align-items: center;
+              margin-right: 32px;
+            }
+        }
+
+        &--b {
+          display: flex;
+          flex-direction: column; 
+          margin-right: 16px;
+
+          @include tablet {
+            flex-direction: row; 
+            align-items: center;
+            margin-right: 32px;
+            }
+          }
         }
 
         &--channel {
             font-family: 'Avenir Next Demi', Arial, sans-serif;
             color: $brainflix-black;
+            margin-right: 16px;
+            }
+      
+        &--views {
+
+          @include tablet {
+          margin-right: 24px;
+          }
         }
       }
-    }
 
     &__description {
         font-size: .85rem;
+
+        @include tablet {
+          font-size: 1rem;
+        }
     }
 
     &__comment-count {
@@ -70,3 +113,4 @@
         font-family: 'Avenir Next Demi', Arial, sans-serif;
     }
   }
+

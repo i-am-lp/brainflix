@@ -23,7 +23,7 @@ function VideoPlayer() {
                     <h1 className="video-player__details--title">{selectedVideo.title}</h1>
                     <div className="video-player__details--grouped">
                         <div className="video-player__details--grouped--a">
-                            <p className="video-player__details--grouped--channel">By {selectedVideo.channel}</p>
+                            <p className="video-player__details--channel">By {selectedVideo.channel}</p>
                             <p className="video-player__details--grouped--date">{formattedDate}</p>
                         </div>
                         <div className="video-player__details--grouped--b">
