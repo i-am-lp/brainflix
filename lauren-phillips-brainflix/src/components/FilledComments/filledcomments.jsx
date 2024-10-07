@@ -7,8 +7,7 @@ import './filledcomments.scss';
 function FilledComments() {
     const { id } = useParams();
     const [selectedVideo, setSelectedVideo] = useState(videoData[0]);
-    // const date = new Date(selectedVideo.comment.timestamp);
-    // const formattedDate = format(date, 'MM/dd/yyyy');
+
 
     useEffect(() => {
         const video = videoData.find(video => video.id === id) || videoData[0]; 

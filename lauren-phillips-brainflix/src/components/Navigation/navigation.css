@@ -36,6 +36,7 @@
 .header__profile {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 .header__profile--search-box {
   background-image: url(../../assets/Icons/search.svg);
@@ -48,9 +49,10 @@
   border-radius: 4px;
   border: 1px solid rgba(175, 175, 175, 0.5);
   height: 36px;
-  width: 220px;
+  width: 190px;
   outline: none;
   margin-right: 8px;
+  order: 1;
 }
 .header__profile--image {
   background-image: url(../../assets/Images/Mohan-muruge.jpg);
@@ -59,6 +61,12 @@
   height: 42px;
   width: 42px;
   margin-left: 8px;
+  order: 2;
+}
+@media screen and (min-width: 768px) {
+  .header__profile--image {
+    order: 3;
+  }
 }
 .header__upload-button {
   background-color: #0095FF;
@@ -72,9 +80,11 @@
   height: 40px;
   margin: 16px 0;
   border-radius: 4px;
+  order: 3;
 }
 @media screen and (min-width: 768px) {
   .header__upload-button {
     width: 150px;
+    order: 2;
   }
 }/*# sourceMappingURL=navigation.css.map */

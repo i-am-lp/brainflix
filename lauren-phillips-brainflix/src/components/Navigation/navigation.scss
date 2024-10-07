@@ -44,6 +44,7 @@
     &__profile {
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
 
         &--search-box {
             background-image: url(../../assets/Icons/search.svg);
@@ -56,9 +57,10 @@
             border-radius: 4px;
             border: 1px solid rgb(175, 175, 175, .5); 
             height: 36px;
-            width: 220px;
+            width: 190px;
             outline:none;
             margin-right: 8px;
+            order: 1;
         }
 
         &--image {
@@ -68,6 +70,11 @@
             height: 42px;
             width: 42px;
             margin-left: 8px;
+            order: 2;
+
+            @include tablet {
+                order: 3;
+            }
         }
     }
 
@@ -83,9 +90,11 @@
         height: 40px;
         margin: 16px 0;
         border-radius: 4px;
+        order: 3;
 
         @include tablet {
             width: 150px;
+            order: 2;
         }
     }
 
