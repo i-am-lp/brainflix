@@ -4,6 +4,7 @@ import VideoPlayer from './components/VideoPlayer/videoplayer.jsx';
 import VideoDetails from './components/VideoDetails/videodetails.jsx';
 import CommentSection from './components/CommentSection/commentsection.jsx';
 import FilledComments from './components/FilledComments/filledcomments.jsx';
+import UploadPage from '../../pages/UploadVideo/uploadvideo.jsx';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 
@@ -45,6 +46,13 @@ function App() {
                 <NextVideos />
                 </div>
                 </div>
+              </>
+            } />
+
+            <Route path="/video/upload" element={
+              <>
+              {/* <Nav /> */}
+              <UploadPage />
               </>
             } />
           </Routes>

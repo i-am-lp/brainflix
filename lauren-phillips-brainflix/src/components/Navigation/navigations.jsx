@@ -1,5 +1,6 @@
 import './navigation.css'
 import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Nav = () => {
     return (
@@ -12,7 +13,7 @@ const Nav = () => {
             <input className="header__profile--search-box" type="text" id="search" name="search" placeholder="Search" />
           </form>
           <div className="header__profile--image" alt="A close up profile picture of a man"></div>
-          <button type="submit" className="header__upload-button">UPLOAD</button>
+          <Link to="/video/upload"><button type="submit" className="header__upload-button">UPLOAD</button></Link>
         </div>
       </nav>
     )

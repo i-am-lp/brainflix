@@ -6,9 +6,6 @@ import './videoplayer.css';
 function VideoPlayer() {
     const { id } = useParams();
     const selectedVideo = videoData.find(video => video.id === id) || videoData[0]; 
-    const numberOfComments = selectedVideo.comments.length;
-    const date = new Date(selectedVideo.timestamp);
-    const formattedDate = format(date, 'MM/dd/yyyy');
 
     return (
         <section className="video-player">
