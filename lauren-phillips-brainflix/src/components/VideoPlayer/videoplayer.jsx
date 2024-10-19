@@ -1,7 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from 'axios';
-// import videoData from '../../Data/video-details.json';
 import './videoplayer.css';
 
 const BASE_URL = 'https://unit-3-project-api-0a5620414506.herokuapp.com';
@@ -12,7 +11,6 @@ function VideoPlayer() {
     const navigate = useNavigate();
     const [video, setVideo] = useState(null);
     const [videos, setVideos] = useState([]);
-    // const selectedVideo = videoData.find(video => video.id === id) || videoData[0]; 
 
     useEffect(() => {
         const fetchData = async () => {
