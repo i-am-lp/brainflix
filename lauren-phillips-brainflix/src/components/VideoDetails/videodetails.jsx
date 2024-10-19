@@ -26,10 +26,10 @@ function VideoDetails() {
                 } else {
                     const response = await fetch(`${BASE_URL}/videos/${id}?api_key=${apiKey}`);
                     const contentType = response.headers.get('content-type');
-                    if (contentType && contentType.includes('application/json')) {
+                    // if (contentType && contentType.includes('application/json')) {
                         const data = await response.json();
                         setVideo(data); 
-                    }
+                    // }
                 }
             } catch (error) {
                 console.error('Error fetching data:', error);
