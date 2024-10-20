@@ -1,0 +1,87 @@
+@use '../../src/styles/partials/variables' as *;
+@use '../../src/styles/partials/mixins' as *;
+
+
+@font-face {
+    font-family: 'Avenir Next Regular';
+    src: url(../../assets/Font/AvenirNextLTPro-Regular.otf) format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir Next Demi';
+    src: url(../../assets/Font/AvenirNextLTPro-Demi.otf) format('opentype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir Next Bold';
+    src: url(../../assets/Font/AvenirNextLTPro-Bold.otf) format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+.upload {
+    border-top: 1px solid $mercury;
+
+    &__title {
+        font-family: 'Avenir Next Demi', Arial, sans-serif;
+    }
+
+    &__thumbnail--img {
+        width: 100%;
+    }
+
+    &__form {
+        margin-right: 2px;
+
+        &--text {
+            color: $silver;
+            font-family: 'Avenir Next Demi', Arial, sans-serif;
+            font-size: 1rem;
+        }   
+
+        &__empty {
+            background-color: $alabaster;
+            font-family: 'Avenir Next Regular', Arial, sans-serif;
+            font-size: 1rem;
+            color: $brainflix-black;
+            border-radius: 4px;
+            border: 1px solid rgb(175, 175, 175, .5); 
+            width: 100%;
+        }
+
+        &__button {
+            display: flex;
+            flex-direction: column;
+
+            &--publish {
+                background-color: $brainflix-blue;
+                color: $white;
+                font-size: 1rem;
+                border: 1px solid $brainflix-blue;
+                background-image: url(../../src/assets/Icons/upload.svg);
+                background-repeat: no-repeat;
+                background-position: left;
+                background-size: auto 24px;
+                width: 103%;
+                height: 40px;
+                margin: 16px 0;
+                border-radius: 4px;
+            }
+
+            &--cancel {
+                border-radius: 4px;
+                border: none;
+                background-color: $white;
+                color: $brainflix-blue;
+                font-family: 'Avenir Next Demi', Arial, sans-serif;
+                font-size: 1rem;
+                height: 40px;
+            }
+        }
+    }
+
+}
