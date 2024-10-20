@@ -12,9 +12,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <header>
           <Nav />
-        </header>
 
         <main>
           <Routes>
@@ -27,9 +25,7 @@ function App() {
                 <CommentSection />
                 <FilledComments />
                 </div>
-                <div className='desktop-container__right'>
                 <NextVideos />
-                </div>
                 </div>
               </>
             } />
@@ -42,9 +38,7 @@ function App() {
                 <CommentSection />
                 <FilledComments />
                 </div>
-                <div className='desktop-container__right'>
                 <NextVideos />
-                </div>
                 </div>
               </>
             } />
