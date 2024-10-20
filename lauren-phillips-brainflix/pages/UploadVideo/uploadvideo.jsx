@@ -1,6 +1,15 @@
 import './uploadedvideo.scss';
+import { useNavigate } from 'react-router-dom';
 
 const UploadPage = () => {
+    const navigate = useNavigate();
+
+    const handleSubmit = (event) => {
+        event.preventDefault(); 
+        window.location.replace('/');
+        alert("Your video has been published!");
+    };
+
     return (
         <>
         <div className="upload">
@@ -11,14 +20,14 @@ const UploadPage = () => {
                     <img className="upload__thumbnail--img" src="../../src/assets/Images/Upload-video-preview.jpg" alt="Zoomed in shot of a track race" />
                 </div>
                 <div className="upload__form">
-                    <form id="upload__form" className="upload__form" method="post">
+                    <form id="upload__form" className="upload__form" method="post" onSubmit={handleSubmit}>
                         <p className="upload__form--text">TITLE YOUR VIDEO</p>
                         <textarea name="title" className="upload__form__empty upload__form--title" id="title" placeholder="Add a title to your video"></textarea>
                         <p className="upload__form--text">ADD A VIDEO DESCRIPTION</p>
                         <textarea name="description" className="upload__form__empty upload__form--description" id="description" placeholder="Add a description to your video"></textarea>
                         <div className="upload__form__button">
                             <button type="submit" className="upload__form__button--publish">PUBLISH</button>
-                            <button type="submit" className="upload__form__button--cancel">CANCEL</button>
+                            <button type="button" className="upload__form__button--cancel" onClick={() => navigate('/')}>CANCEL</button>
                         </div>
                     </form>
                 </div>
