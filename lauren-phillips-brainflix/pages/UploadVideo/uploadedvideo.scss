@@ -26,12 +26,25 @@
 .upload {
     border-top: 1px solid $mercury;
 
+    @include tablet {
+        border-top: none;
+    }
+
     &__title {
         font-family: 'Avenir Next Demi', Arial, sans-serif;
+
+        @include tablet {
+            border-bottom: 1px solid $mercury;
+            padding-bottom: 24px;
+        }
     }
 
     &__thumbnail--img {
         width: 100%;
+
+        @include tablet {
+            width: 55%;
+        }
     }
 
     &__form {
@@ -42,6 +55,14 @@
             font-family: 'Avenir Next Demi', Arial, sans-serif;
             font-size: 1rem;
         }   
+
+        &--description {
+            height: 100px;
+
+            @include tablet {
+                margin-bottom: 24px;
+            }
+        }
 
         &__empty {
             background-color: $alabaster;
@@ -57,6 +78,12 @@
             display: flex;
             flex-direction: column;
 
+            @include tablet {
+                flex-direction: row;
+                justify-content: end;
+                border-top: 1px solid $mercury;
+            }
+
             &--publish {
                 background-color: $brainflix-blue;
                 color: $white;
@@ -70,6 +97,11 @@
                 height: 40px;
                 margin: 16px 0;
                 border-radius: 4px;
+
+                @include tablet {
+                    width: 150px;
+                    order: 2;
+                }
             }
 
             &--cancel {
@@ -80,7 +112,13 @@
                 font-family: 'Avenir Next Demi', Arial, sans-serif;
                 font-size: 1rem;
                 height: 40px;
+                padding-top: 25px;
+            
+                @include tablet {
+                    margin-right: 24px;
+                }
             }
+
         }
     }
 
