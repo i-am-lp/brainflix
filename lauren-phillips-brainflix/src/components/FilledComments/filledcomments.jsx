@@ -21,12 +21,15 @@ function FilledComments() {
                 setVideos(data);
 
                 if (!id && data.length > 0) {
-                    setVideo(data[0]);
+                    const firstVideoId = data[0].id;
+                    const videoResponse = await fetch(`${BASE_URL}/videos/${firstVideoId}?api_key=${apiKey}`);
+                    const videoData = await videoResponse.json();
+                    setVideo(videoData); 
+
                 } else {
                     const response = await fetch(`${BASE_URL}/videos/${id}?api_key=${apiKey}`);
-                    const contentType = response.headers.get('content-type');
-                    const data = await response.json();
-                    setVideo(data); 
+                    const videoData = await response.json();
+                    setVideo(videoData); 
                 }
             } catch (error) {
                 console.error('Error fetching data:', error);

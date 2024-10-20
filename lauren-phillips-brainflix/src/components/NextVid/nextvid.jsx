@@ -1,4 +1,4 @@
-import './nextvid.css';
+import './nextvid.scss';
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from 'axios';
@@ -21,12 +21,15 @@ function NextVideos() {
                 setVideos(data);
 
                 if (!id && data.length > 0) {
-                    setVideo(data[0]);
+                    const firstVideoId = data[0].id;
+                    const videoResponse = await fetch(`${BASE_URL}/videos/${firstVideoId}?api_key=${apiKey}`);
+                    const videoData = await videoResponse.json();
+                    setVideo(videoData); 
+
                 } else {
                     const response = await fetch(`${BASE_URL}/videos/${id}?api_key=${apiKey}`);
-                    const contentType = response.headers.get('content-type');
-                    const data = await response.json();
-                    setVideo(data); 
+                    const videoData = await response.json();
+                    setVideo(videoData); 
                 }
             } catch (error) {
                 console.error('Error fetching data:', error);
@@ -42,13 +45,14 @@ function NextVideos() {
     return (
         <section className="next-video">
             <p className='next-video__title'>NEXT VIDEOS</p>
-            {videos.map((video) => (
-                <Link to={`/video/${video.id}`} key={video.id}  className="next-video__link">
+            {videos.filter((vid) => vid.id !== video.id)
+            .map((vid) => (
+                <Link to={`/video/${vid.id}`} key={vid.id} className="next-video__link">
                     <article className="next-video__main">
-                        <img src={video.image} alt={video.title} className="next-video__image" />
+                        <img src={vid.image} alt={vid.title} className="next-video__image" />
                         <div className='next-video__details'>
-                            <p className="next-video__details--title">{video.title}</p>
-                            <p className='next-video__details--by'>{video.channel}</p>
+                            <p className="next-video__details--title">{vid.title}</p>
+                            <p className='next-video__details--by'>{vid.channel}</p>
                         </div>
                     </article>
                 </Link>

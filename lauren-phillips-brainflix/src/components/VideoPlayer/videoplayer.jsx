@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from 'axios';
-import './videoplayer.css';
+import './videoplayer.scss';
 
 const BASE_URL = 'https://unit-3-project-api-0a5620414506.herokuapp.com';
 const apiKey = 'b286a708-8923-4590-9df6-3b753af414ce';

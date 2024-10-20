@@ -2,7 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { format } from 'date-fns';
 import axios from "axios";
-import '../VideoPlayer/videoplayer.css';
+import '../VideoPlayer/videoplayer.scss';
 
 
 const BASE_URL = 'https://unit-3-project-api-0a5620414506.herokuapp.com';
@@ -22,14 +22,15 @@ function VideoDetails() {
                 setVideos(data);
 
                 if (!id && data.length > 0) {
-                        setVideo(data[0]);
+                    const firstVideoId = data[0].id;
+                    const videoResponse = await fetch(`${BASE_URL}/videos/${firstVideoId}?api_key=${apiKey}`);
+                    const videoData = await videoResponse.json();
+                    setVideo(videoData); 
+
                 } else {
                     const response = await fetch(`${BASE_URL}/videos/${id}?api_key=${apiKey}`);
-                    const contentType = response.headers.get('content-type');
-                    // if (contentType && contentType.includes('application/json')) {
-                        const data = await response.json();
-                        setVideo(data); 
-                    // }
+                    const videoData = await response.json();
+                    setVideo(videoData); 
                 }
             } catch (error) {
                 console.error('Error fetching data:', error);
