@@ -29,6 +29,20 @@
     @include tablet {
         border-top: none;
     }
+    
+    &__desktop{
+        @include desktop {
+            display: flex;
+        }
+
+        &--thumbnail {
+            @include desktop {
+                width: 50%;
+                border-bottom: 1px solid rgb(175, 175, 175, .5);
+                margin-bottom: 72px;
+            }
+        }
+    }
 
     &__title {
         font-family: 'Avenir Next Demi', Arial, sans-serif;
@@ -45,10 +59,20 @@
         @include tablet {
             width: 55%;
         }
+
+        @include desktop {
+            width: 95%;
+        }
     }
 
     &__form {
         margin-right: 2px;
+
+        @include desktop {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
 
         &--text {
             color: $silver;
@@ -102,6 +126,10 @@
                     width: 150px;
                     order: 2;
                 }
+
+                @include desktop {
+                    font-size: .85rem;
+                }
             }
 
             &--cancel {
@@ -116,6 +144,11 @@
             
                 @include tablet {
                     margin-right: 24px;
+                }
+
+                @include desktop {
+                    margin-right: 48px;
+                    font-size: .85rem;
                 }
             }
 
