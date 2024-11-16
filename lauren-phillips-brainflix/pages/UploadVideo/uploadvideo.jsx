@@ -1,14 +1,32 @@
 import './uploadedvideo.scss';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { postVideo } from '../../src/utils/apirequests';
+
 
 const UploadPage = () => {
     const navigate = useNavigate();
+    const [title, setTitle] = useState('');
+    const [description, setDescription] = useState('');
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async(event) => {
         event.preventDefault(); 
-        window.location.replace('/');
-        alert("Your video has been published!");
-    };
+        try {
+            const newVideo = {
+              title: title,
+              description: description,
+              image: '/images/Upload-video-preview.jpg', 
+            };
+      
+            await postVideo(newVideo);
+      
+            alert('Your video has been published!');
+            navigate('/'); 
+          } catch (error) {
+            console.error('Error uploading video:', error);
+            alert('Failed to upload the video. Please try again.');
+          }
+        };
 
     return (
         <>
@@ -17,7 +35,7 @@ const UploadPage = () => {
             <div className='upload__desktop'>
                 <div className='upload__desktop--thumbnail'>
                     <p className="upload__form--text">VIDEO THUMBNAIL</p>
-                    <img className="upload__thumbnail--img" src="../../src/assets/Images/Upload-video-preview.jpg" alt="Zoomed in shot of a track race" />
+                    <img className="upload__thumbnail--img" src="/images/Upload-video-preview.jpg" alt="Zoomed in shot of a track race" />
                 </div>
                 <div className="upload__form">
                     <form id="upload__form" className="upload__form" method="post" onSubmit={handleSubmit}>
