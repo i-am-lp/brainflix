@@ -35,7 +35,7 @@ const UploadPage = () => {
             <div className='upload__desktop'>
                 <div className='upload__desktop--thumbnail'>
                     <p className="upload__form--text">VIDEO THUMBNAIL</p>
-                    <img className="upload__thumbnail--img" src="/images/Upload-video-preview.jpg" alt="Zoomed in shot of a track race" />
+                    <img className="upload__thumbnail--img" src={`${import.meta.env.VITE_APP_API_URL}/images/Upload-video-preview.jpg`} alt="Zoomed in shot of a track race" />
                 </div>
                 <div className="upload__form">
                     <form id="upload__form" className="upload__form" method="post" onSubmit={handleSubmit}>
