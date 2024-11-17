@@ -67,7 +67,7 @@ app.post("/videos", ( req, res ) => {
         const newVideo = {
             id: uuidv4(),
             title,
-            channel: "Channel name",
+            channel: "Channel Name",
             image: "http://localhost:8080/images/Upload-video-preview.jpg",
             description,
             views: "0",

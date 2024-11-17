@@ -5,8 +5,6 @@ import { fetchVideos, fetchVideoById } from "../../utils/apirequests";
 import '../VideoPlayer/videoplayer.scss';
 
 
-const API_URL = import.meta.env.VITE_APP_API_URL;
-
 function VideoDetails() {
     const { id } = useParams(); 
     const [video, setVideo] = useState(null); 
@@ -15,9 +13,17 @@ function VideoDetails() {
         const fetchData = async () => {
             try {
               const videos = await fetchVideos();
-              if (!id) {
-                setVideo(videos[0]); 
-              } else {
+              let videoId = id;
+   
+              if (!id && videos.length > 0) {
+                videoId = videos[0].id;
+                // return;
+              } 
+              if (videoId) {
+                // Fetch full details for the video
+                const videoDetails = await fetchVideoById(videoId);
+                setVideo(videoDetails);
+              }else {
                 const videoDetails = await fetchVideoById(id);
                 setVideo(videoDetails);
               }

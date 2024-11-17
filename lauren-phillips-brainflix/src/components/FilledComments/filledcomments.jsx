@@ -14,8 +14,13 @@ function FilledComments() {
         const fetchData = async () => {
             try {
               const videos = await fetchVideos();
-              if (!id) {
-                setVideo(videos[0]); 
+              let videoId = id;
+   
+              if (!id && videos.length > 0) {
+                videoId = videos[0].id;
+              } if (videoId) {
+                const videoDetails = await fetchVideoById(videoId);
+                setVideo(videoDetails);
               } else {
                 const videoDetails = await fetchVideoById(id);
                 setVideo(videoDetails);
