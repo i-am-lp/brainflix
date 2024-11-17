@@ -292,16 +292,5 @@
         "timestamp": 1701584262000
       }
     ]
-  },
-  {
-    "id": "b338ba89-0dfa-4422-95af-04c179da79af",
-    "title": "jfldas",
-    "channel": "Channel name",
-    "image": "http://localhost:8080/images/Upload-video-preview.jpg",
-    "description": "fdjklas;",
-    "views": "0",
-    "likes": "0",
-    "timeStamp": 1731793230186,
-    "comments": []
   }
 ]

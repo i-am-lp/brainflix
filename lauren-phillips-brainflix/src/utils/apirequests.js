@@ -4,14 +4,9 @@ const API_URL = import.meta.env.VITE_APP_API_URL;
 
 
 export const fetchVideos = async () => {
-    try {
-      const response = await axios.get(`${API_URL}/videos`);
-      return response.data;
-    } catch (error) {
-      console.error("Error fetching videos:", error);
-      throw error; 
-    }
-  };
+  const response = await axios.get(`${API_URL}/videos`);
+  return response.data;
+};
 
 export const fetchVideoById = async (id) => {
   const response = await axios.get(`${API_URL}/videos/${id}`);
@@ -19,12 +14,7 @@ export const fetchVideoById = async (id) => {
 };
 
 export const postVideo = async (videoData) => {
-    try {
-      const response = await axios.post(`${API_URL}/videos`, videoData);
-      return response.data;
-    } catch (error) {
-      console.error("Error uploading video:", error.response?.data || error.message);
-      throw error;
-    }
-  };
+  const response = await axios.post(`${API_URL}/videos`, videoData);
+  return response.data;
+};
 
