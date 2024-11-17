@@ -42,6 +42,7 @@ body {
 
         @include desktop{
         width: 60vw;
+        // flex-grow: 8;
         border-right: 1px solid rgb(175, 175, 175, .5); 
         }
     }
@@ -49,6 +50,7 @@ body {
     &__right {
         @include desktop {
         margin-left: 36px;
+        // flex-shrink: 1;
         }
     }
 }

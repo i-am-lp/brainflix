@@ -1,43 +1,33 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { format } from 'date-fns';
-import axios from "axios";
+import { fetchVideos, fetchVideoById } from "../../utils/apirequests";
 import '../VideoPlayer/videoplayer.scss';
 
 
-const BASE_URL = 'https://unit-3-project-api-0a5620414506.herokuapp.com';
-const apiKey = 'b286a708-8923-4590-9df6-3b753af414ce';
+const API_URL = import.meta.env.VITE_APP_API_URL;
 
 function VideoDetails() {
     const { id } = useParams(); 
-    const navigate = useNavigate(); 
     const [video, setVideo] = useState(null); 
-    const [videos, setVideos] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`${BASE_URL}/videos/?api_key=${apiKey}`);
-                const data = await response.json();
-                setVideos(data);
-
-                if (!id && data.length > 0) {
-                    const firstVideoId = data[0].id;
-                    const videoResponse = await fetch(`${BASE_URL}/videos/${firstVideoId}?api_key=${apiKey}`);
-                    const videoData = await videoResponse.json();
-                    setVideo(videoData); 
-
-                } else {
-                    const response = await fetch(`${BASE_URL}/videos/${id}?api_key=${apiKey}`);
-                    const videoData = await response.json();
-                    setVideo(videoData); 
-                }
+              const videos = await fetchVideos();
+              if (!id) {
+                setVideo(videos[0]); 
+              } else {
+                const videoDetails = await fetchVideoById(id);
+                setVideo(videoDetails);
+              }
             } catch (error) {
-                console.error('Error fetching data:', error);
+              console.error('Error fetching video:', error);
             }
-        };
-        fetchData();
-    }, [id, navigate]); 
+          };
+      
+          fetchData();
+        }, [id]);
 
     if (!video) {
         return <div>Loading...</div>; 
