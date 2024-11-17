@@ -1,9 +1,5 @@
 import Nav from './components/Navigation/navigations.jsx';
-import NextVideos from './components/NextVid/NextVid.jsx';
-import VideoPlayer from './components/VideoPlayer/videoplayer.jsx';
-import VideoDetails from './components/VideoDetails/videodetails.jsx';
-import CommentSection from './components/CommentSection/commentsection.jsx';
-import FilledComments from './components/FilledComments/filledcomments.jsx';
+import HomePage from './components/HomePage/homepage.jsx';
 import UploadPage from '../pages/UploadVideo/uploadvideo.jsx';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.scss';
@@ -19,28 +15,12 @@ function App() {
           <Routes>
             <Route path="/" element={
               <>
-                <VideoPlayer />
-                <div className='desktop-container'>
-                <div className='desktop-container__left'>
-                <VideoDetails />
-                <CommentSection />
-                <FilledComments />
-                </div>
-                <NextVideos />
-                </div>
+                <HomePage />
               </>
             } />
             <Route path="/video/:id" element={
               <>
-                <VideoPlayer />
-                <div className='desktop-container'>
-                <div className='desktop-container__left'>
-                <VideoDetails />
-                <CommentSection />
-                <FilledComments />
-                </div>
-                <NextVideos />
-                </div>
+                <HomePage />
               </>
             } />
 
